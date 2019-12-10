@@ -46,6 +46,10 @@ ApplicationWindow
         {
           id: quantityField
           Layout.fillWidth: true
+          placeholderText: "10 m"
+          ToolTip.text: qsTr("The quantity you want to convert.")
+          ToolTip.visible: hovered
+          ToolTip.delay: 1000
         }
 
 
@@ -60,6 +64,10 @@ ApplicationWindow
           id: unitField
           Layout.fillWidth: true
           Keys.onReleased: unitConvertPage.convert()
+          placeholderText: "in"
+          ToolTip.text: qsTr("The unit you want to convert too.")
+          ToolTip.visible: hovered
+          ToolTip.delay: 1000
         }
 
 
@@ -141,6 +149,29 @@ ApplicationWindow
         Keys.onEnterPressed: run()
       }
 
+      RowLayout
+      {
+        anchors.margins:10
+        Button
+        {
+          id: addUnitsButton;
+          text: "Add Unit";
+          Layout.fillWidth: false
+          function run(){
+            backend.addUnit(addUnitField.text)
+            addUnitField.text = ""
+          }
+          onPressed: run()
+          Keys.onReturnPressed:  run()
+          Keys.onEnterPressed: run()
+        }
+        TextField
+        {
+          id: addUnitField
+          Layout.fillWidth: true
+          placeholderText: "254 cm = 100 in"
+        }
+      }
 
 
 

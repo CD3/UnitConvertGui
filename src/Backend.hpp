@@ -18,6 +18,7 @@ class Backend : public QObject
     Backend() = default;
     ~Backend() = default;
     Q_INVOKABLE QString convert(const QString& q, const QString& u);
+    Q_INVOKABLE QString addUnit(const QString& eq);
 };
 
 

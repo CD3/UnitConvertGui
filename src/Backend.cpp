@@ -23,3 +23,17 @@ QString Backend::convert(const QString& q, const QString& u)
     return "Unknown Error (Sorry)";
   }
 }
+
+QString Backend::addUnit(const QString& eq)
+{
+  UnitRegistry& ureg = getGlobalUnitRegistry();
+
+  try {
+    ureg.addUnit(eq.toStdString());
+    return "";
+  } catch (const std::runtime_error& e) {
+    return e.what();
+  } catch (...) {
+    return "Unknown Error (Sorry)";
+  }
+}
