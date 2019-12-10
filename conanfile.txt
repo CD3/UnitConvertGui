@@ -1,0 +1,12 @@
+[generators]
+virtualenv
+
+[requires]
+UnitConvert/0.6@cd3/devel
+qt/5.13.2@bincrafters/stable
+zlib/1.2.11@conan/stable
+bzip2/1.0.6@conan/stable
+
+[options]
+qt:qtdeclarative=True
+qt:qtquickcontrols2=True
