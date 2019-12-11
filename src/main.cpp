@@ -11,5 +11,6 @@ int main(int argc, char** argv)
     QQmlApplicationEngine engine(QUrl(QStringLiteral("qrc:///MainWindow.qml")));
     Backend backend;
     engine.rootContext()->setContextProperty("backend", &backend);
+    QObject::connect(&app,SIGNAL(aboutToQuit()),&backend,SLOT(saveUserDefinedUnits()));
     return app.exec();
 }
