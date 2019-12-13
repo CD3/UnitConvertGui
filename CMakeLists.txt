@@ -36,3 +36,5 @@ target_link_libraries(preview
     Qt5::Qml
     Qt5::Quick
     )
+
+  install(TARGETS ${PROJECT_NAME} RUNTIME )

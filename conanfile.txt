@@ -1,5 +1,6 @@
 [generators]
 virtualenv
+virtualrunenv
 
 [requires]
 UnitConvert/0.6@cd3/devel
